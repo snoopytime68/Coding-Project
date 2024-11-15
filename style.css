@@ -1,57 +1,71 @@
 body {
-    background-color: (left right, blue, green);
+    /* No idea what this means */
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+    /* Creates a radial color of black and grey */
+    background: radial-gradient(circle, rgb(18, 18, 19), rgb(37, 37, 37)) ;
 }
 
 p {
+    /* Size of text */
     font-size: 32px;
-    margin-left: 45%;
-
     opacity: 0;
-
+    /* Calls and uses the animation function with a 2 second delay */
     animation-name: Loadin;
     animation-duration: 2s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
-    transform: translate(-150px);
-    
+
+    /* Creates a shadow around the text */
+    text-shadow: 0px 0px 10px white;
 }
 
 .Title {
+    /* Creates the title and prepares it for pseudo code */
     display: flex;
-    position: relative;
     width: max-content;
     padding-top: 50px;
-    margin-left: 45%;
-
     opacity: 0;
-
+    
+    /* Calls the function animation with a 2.25 second delay */
     animation-name: Loadin;
     animation-duration: 2s;
     animation-delay: 2.25s;
     animation-fill-mode: forwards;
-    transform: translate(-150px);
+    /* Creates a shadow around the text */
+    text-shadow: 0px 0px 10px white;
 }
 
+/* Pseudo Code */
 .Title::after {
+    /* Creates line under the Titles */
     content: "";
     position: absolute;
-    background-color: blue;
+    background-color: rgb(174, 128, 0);
     width: 100%;
     height: 10px;
     margin-top: 25px;
     border-radius: 100px;
 }
 
+/* Creates an animation */
 @keyframes Loadin {
-    
+
     0% {
         opacity: 0;
         transform: translatey(-150px);
     }
-    
+
     100% {
         opacity: 1;
         transform: translate(0);
     }
-    
+
 }
