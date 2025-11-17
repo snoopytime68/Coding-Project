@@ -1,0 +1,60 @@
+start: intro
+nodes:
+  intro:
+    text: |
+      You wake in a small forest clearing. Sunlight filters through the leaves.
+      Paths lead away in several directions.
+    choices:
+      - text: "Head north toward the distant sound of water"
+        target: river
+      - text: "Follow a faint path to the east"
+        target: cabin
+      - text: "Sit and rest a while"
+        target: rest
+
+  river:
+    text: |
+      You arrive at a wide, slow river. A rickety bridge crosses to the other side.
+    choices:
+      - text: "Cross the bridge"
+        target: other_side
+      - text: "Follow the river downstream"
+        target: downstream
+
+  cabin:
+    text: |
+      A small cabin sits empty but warm. A kettle whistles on the stove.
+    choices:
+      - text: "Enter the cabin"
+        target: inside_cabin
+      - text: "Return to the clearing"
+        target: intro
+
+  rest:
+    text: |
+      You sit, breathe deeply, and feel sleep wash over you.
+    end: true
+
+  other_side:
+    text: |
+      On the other side you find a friendly village. People greet you.
+    end: true
+
+  downstream:
+    text: |
+      Following the river you find a boat and a map leading to adventure.
+    end: true
+
+  inside_cabin:
+    text: |
+      Inside the cabin you discover a hidden trapdoor.
+    choices:
+      - text: "Open the trapdoor"
+        target: basement
+      - text: "Leave the cabin"
+        target: intro
+
+  basement:
+    text: |
+      A dusty library of maps and journals. One journal has your name.
+    end: true
